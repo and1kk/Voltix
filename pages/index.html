@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Каталог товаров</title>
+
+    <!-- Стили -->
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Скрипты -->
+    <script src="/scripts/index.js" defer></script>
+    <script src="/scripts/header.js"></script>
+</head>
+
+<body>
+    <!-- Оверлей -->
+    <div id="overlay"></div>
+
+    <!-- Кнопка открытия фильтров -->
+    <button id="toggleFilters" class="toggle-filters">&#x25B6;</button>
+
+    <!-- Фильтры -->
+    <section id="filtersPanel" class="filters closed">
+        <h2>Фильтры</h2>
+
+        <div class="filter-group">
+            <label for="categoryFilter">Категория:</label>
+            <select id="categoryFilter">
+                <option value="">Все</option>
+                <option value="Телефон">Телефон</option>
+                <option value="Ноутбук">Ноутбук</option>
+                <option value="Планшет">Планшет</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="priceFilter">Цена: до</label>
+            <input type="number" id="priceFilter" placeholder="Напр. 10000" />
+        </div>
+
+        <div class="filter-group">
+            <label for="screenFilter">Характеристика экрана (мин. дюймов):</label>
+            <input type="number" step="0.1" id="screenFilter" placeholder="Напр. 6.1" />
+        </div>
+
+        <button id="applyFilters">Применить</button>
+    </section>
+
+    <!-- Список товаров -->
+    <main>
+        <div id="productsList" class="products-grid">
+            <!-- Товары будут добавлены здесь -->
+        </div>
+    </main>
+</body>
+
+</html>

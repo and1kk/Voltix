@@ -1,0 +1,239 @@
+/* Сброс и базовые стили */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(270deg, #000000, #1a1a1a, #000000);
+    background-size: 600% 600%;
+    animation: body-fade 20s ease infinite;
+    color: #eee;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes body-fade {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Фильтры */
+
+.filters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 85px;
+    width: 270px;
+    max-width: 80vw;
+    background-color: #1e1e1e;
+    padding: 25px 30px;
+    box-shadow: 3px 0 15px rgba(0, 87, 255, 0.3);
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    border-radius: 0 15px 15px 0;
+}
+
+.filters h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #00aaff;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    background-color: #111;
+    color: #eee;
+    font-size: 1rem;
+}
+
+#applyFilters {
+    background-color: #0057ff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#applyFilters:hover {
+    background-color: #007fff;
+}
+
+
+/* Кнопка открытия фильтров на мобилках */
+
+#toggleFilters {
+    position: fixed;
+    top: 180px;
+    /* ниже хедера */
+    left: 20px;
+    z-index: 1000;
+    /* ниже хедера */
+    background-color: #0057ff;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+
+/* Оверлей затемнения при открытых фильтрах */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1050;
+    display: none;
+}
+
+#overlay.show {
+    display: block;
+}
+
+
+/* Список товаров */
+
+#productsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #1a1a1a;
+    transition: margin-left 0.3s ease;
+    margin-left: 270px;
+}
+
+
+/* Карточка продукта */
+
+.product-card {
+    background-color: #222;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0, 87, 255, 0.3);
+    width: 300px;
+    padding: 25px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ddd;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 87, 255, 0.6);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.product-card h3 {
+    font-size: 1.6rem;
+    margin: 0 0 10px;
+    color: #00aaff;
+}
+
+.product-card p {
+    font-size: 1rem;
+    margin: 0 0 15px;
+    color: #bbb;
+    min-height: 48px;
+}
+
+.product-card .price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #00d8ff;
+    margin-bottom: 20px;
+}
+
+
+/* Мобилки */
+
+@media (max-width: 768px) {
+    #toggleFilters {
+        display: block;
+    }
+    .filters {
+        width: 260px;
+        transform: translateX(-260px);
+        border-radius: 0;
+    }
+    .filters.open {
+        transform: translateX(0);
+    }
+    #productsList {
+        margin-left: 0;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    .product-card {
+        width: 100%;
+        max-width: 320px;
+        padding: 20px 15px 25px;
+    }
+}
+
+
+/* ПК — фильтры всегда открыты, кнопка и оверлей скрыты */
+
+@media (min-width: 769px) {
+    .filters {
+        transform: none !important;
+    }
+    #productsList {
+        margin-left: 270px;
+    }
+    #toggleFilters,
+    #overlay {
+        display: none !important;
+    }
+}

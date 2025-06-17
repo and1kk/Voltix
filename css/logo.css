@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo canvas {
+    background: transparent;
+}

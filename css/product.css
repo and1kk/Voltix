@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2e2e2e;
+    color: #ddd;
+    /* Уберём центрирование */
+    padding: 40px 0;
+    min-height: 100vh;
+}
+
+.product-container {
+    background-color: #3a3a3a;
+    width: 100vw;
+    /* на всю ширину окна */
+    height: auto;
+    border-radius: 0;
+    /* убираем скругления, чтобы заполнять всю ширину */
+    box-shadow: none;
+    /* убираем тень */
+    padding: 30px 40px;
+    box-sizing: border-box;
+    color: #eee;
+}
+
+#productName {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+#productImage {
+    width: 100%;
+    max-height: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    margin-bottom: 32px;
+    object-fit: contain;
+    background-color: #555;
+}
+
+#productDescription {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 40px;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-weight: 600;
+    color: #ddd;
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+}
+
+#characteristicsTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    color: #eee;
+}
+
+#characteristicsTable th,
+#characteristicsTable td {
+    text-align: left;
+    padding: 16px 20px;
+    border-bottom: 1px solid #555;
+}
+
+#characteristicsTable th {
+    background-color: #444;
+    color: #ddd;
+    font-weight: 600;
+}
+
+#characteristicsTable tbody tr:hover {
+    background-color: #505050;
+    cursor: default;
+}
+
+@media (max-width: 768px) {
+    #productName {
+        font-size: 2.4rem;
+    }
+    #productDescription {
+        font-size: 1.1rem;
+    }
+    #characteristicsTable th,
+    #characteristicsTable td {
+        padding: 12px 14px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 0;
+    }
+    .product-container {
+        padding: 20px 15px;
+    }
+    #productName {
+        font-size: 1.8rem;
+    }
+    #productDescription {
+        font-size: 1rem;
+    }
+    #characteristicsTable th,
+    #characteristicsTable td {
+        padding: 10px 8px;
+        font-size: 0.9rem;
+    }
+}

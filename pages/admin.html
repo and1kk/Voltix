@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Магазин - Админка</title>
+    <link rel="stylesheet" href="/css/admin.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Управление товарами</h1>
+        <form id="productForm">
+            <input type="hidden" id="productId" />
+            <input type="text" id="productName" placeholder="Название товара" required />
+            <input type="text" id="productCategory" placeholder="Категория" required />
+            <input type="number" id="productPrice" placeholder="Цена" required min="0" step="0.01" />
+            <input type="text" id="productImage" placeholder="Ссылка на изображение" />
+            <textarea id="productDescription" placeholder="Описание"></textarea>
+
+            <div id="charList">
+                <h3>Характеристики</h3>
+            </div>
+            <button type="button" id="addCharacteristicBtn">Добавить характеристику</button>
+
+            <button type="submit">Сохранить товар</button>
+            <button type="button" id="resetFormBtn">Очистить форму</button>
+        </form>
+
+        <div class="actions">
+            <input type="text" id="deleteId" placeholder="ID для удаления" />
+            <button id="deleteByIdBtn">Удалить по ID</button>
+
+            <input type="text" id="deleteName" placeholder="Название для удаления" />
+            <button id="deleteByNameBtn">Удалить по названию</button>
+
+            <button id="showAllBtn">Показать все товары</button>
+        </div>
+
+        <div id="productsList" class="products"></div>
+    </div>
+
+    <hr>
+    <h2>Сообщения чата</h2>
+    <div id="admin-chat-box"></div>
+
+    <script src="/scripts/admin.js"></script>
+</body>
+
+</html>

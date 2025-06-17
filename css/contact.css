@@ -1,0 +1,133 @@
+/* Логотип */
+
+
+/* Анимация перелива фона для body */
+
+@keyframes body-fade {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Тело страницы */
+
+body {
+    margin: 0;
+    padding-left: 0px;
+    background: linear-gradient(90deg, #2a2a2a, #333, #3a3a3a);
+    background-size: 200% 200%;
+    animation: body-fade 8s ease-in-out infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+}
+
+
+/* Адаптивный дизайн для телефонов */
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+    .contact-section {
+        padding: 20px 15px;
+        margin: 50px auto 0 auto;
+        max-width: 90%;
+    }
+    .contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+        margin-top: 30px;
+    }
+    .contact-list {
+        gap: 16px;
+    }
+    .contact-list a {
+        font-size: 1rem;
+        padding: 12px 20px;
+        max-width: 100%;
+    }
+    .contact-list img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* Контактный блок */
+
+.contact-section {
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05), 0 0 60px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    align-items: center;
+    margin: 100px auto 0 auto;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+    margin-top: 40px;
+    color: #eee;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact-list li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-list a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 320px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-list a:hover {
+    background-color: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.contact-list img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(0) invert(0.9);
+}

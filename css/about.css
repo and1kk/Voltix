@@ -1,0 +1,101 @@
+/* Главный контент о магазине */
+
+main.contact-section {
+    background: #2a2a2a;
+    border-radius: 20px;
+    padding: 50px 40px;
+    width: 90%;
+    margin: 80px auto;
+    color: #eee;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeInUp 1s ease;
+}
+
+
+/* Анимация появления */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main.contact-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-align: center;
+}
+
+main.contact-section p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ccc;
+}
+
+main.contact-section ul {
+    padding-left: 20px;
+    margin: 20px auto;
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+}
+
+main.contact-section ul li {
+    font-size: 1.1rem;
+    color: #ddd;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 12px;
+}
+
+main.contact-section ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #66cc66;
+    font-weight: bold;
+}
+
+main.contact-section strong {
+    color: #fff;
+}
+
+main.contact-section p:last-child {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #66ccff;
+    margin-top: 40px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    main.contact-section {
+        padding: 30px 20px;
+        margin: 40px 15px;
+        border-radius: 15px;
+    }
+    main.contact-section h2 {
+        font-size: 1.8rem;
+    }
+    main.contact-section p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    main.contact-section ul li {
+        font-size: 1rem;
+        padding-left: 24px;
+    }
+    main.contact-section p:last-child {
+        font-size: 1.1rem;
+        margin-top: 30px;
+    }
+}
