@@ -13,6 +13,7 @@ body {
     color: #eee;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 @keyframes body-fade {
@@ -28,23 +29,37 @@ body {
 }
 
 
+/* Светлая тема для body */
+
+.light-theme {
+    background: #f5f5f5;
+    color: #111;
+    animation: none;
+}
+
+
 /* Фильтры */
 
 .filters {
     position: fixed;
-    top: 0;
+    top: 85px;
     left: 0;
     bottom: 0;
-    top: 85px;
     width: 270px;
     max-width: 80vw;
     background-color: #1e1e1e;
     padding: 25px 30px;
     box-shadow: 3px 0 15px rgba(0, 87, 255, 0.3);
     overflow-y: auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.5s ease;
     z-index: 1100;
     border-radius: 0 15px 15px 0;
+    color: #eee;
+}
+
+.light-theme .filters {
+    background-color: #eaeaea;
+    color: #222;
 }
 
 .filters h2 {
@@ -52,6 +67,10 @@ body {
     font-size: 1.8rem;
     color: #00aaff;
     margin-bottom: 20px;
+}
+
+.light-theme .filters h2 {
+    color: #0077ff;
 }
 
 .filter-group {
@@ -73,6 +92,14 @@ body {
     background-color: #111;
     color: #eee;
     font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.light-theme .filter-group input,
+.light-theme .filter-group select {
+    background-color: #fff;
+    color: #222;
+    border-color: #bbb;
 }
 
 #applyFilters {
@@ -140,8 +167,14 @@ body {
     gap: 30px;
     padding: 40px 20px;
     background-color: #1a1a1a;
-    transition: margin-left 0.3s ease;
+    transition: margin-left 0.3s ease, background-color 0.5s ease, color 0.5s ease;
     margin-left: 270px;
+    color: #ddd;
+}
+
+.light-theme #productsList {
+    background-color: #fff;
+    color: #111;
 }
 
 
@@ -158,8 +191,14 @@ body {
     align-items: center;
     color: #ddd;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
     cursor: pointer;
+}
+
+.light-theme .product-card {
+    background-color: #e7e7e7;
+    color: #222;
+    box-shadow: 0 6px 15px rgba(0, 87, 255, 0.4);
 }
 
 .product-card:hover {
@@ -181,6 +220,10 @@ body {
     color: #00aaff;
 }
 
+.light-theme .product-card h3 {
+    color: #0077ff;
+}
+
 .product-card p {
     font-size: 1rem;
     margin: 0 0 15px;
@@ -188,11 +231,19 @@ body {
     min-height: 48px;
 }
 
+.light-theme .product-card p {
+    color: #444;
+}
+
 .product-card .price {
     font-size: 1.4rem;
     font-weight: 700;
     color: #00d8ff;
     margin-bottom: 20px;
+}
+
+.light-theme .product-card .price {
+    color: #0077ff;
 }
 
 

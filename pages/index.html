@@ -15,6 +15,15 @@
     <!-- Скрипты -->
     <script src="/scripts/index.js" defer></script>
     <script src="/scripts/header.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.body.classList.add('light-theme');
+            }
+        });
+    </script>
 </head>
 
 <body>
