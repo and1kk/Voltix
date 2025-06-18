@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const fetch = require('node-fetch');
 const Database = require('better-sqlite3');
 
 const app = express();
@@ -178,6 +179,8 @@ app.delete('/products/name/:name', (req, res) => {
 
     res.json({ message: 'Удалено' });
 });
+
+
 
 
 const PORT = 3000;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Новинки электроники</title>
+    <link rel="stylesheet" href="/css/news.css">
+    <script src="/scripts/header.js" defer></script>
+</head>
+
+<body>
+
+
+    <main>
+        <div id="newsContainer" class="news-container">
+            <p>Загрузка новостей...</p>
+        </div>
+    </main>
+
+    <script>
+        const apiKey = 'd8914d8fe5a3496f8ad1f5daeaa2f9c0';
+        const container = document.getElementById('newsContainer');
+
+        async function fetchNews() {
+            try {
+                const response = await fetch(`https://newsapi.org/v2/everything?q=electronics&sortBy=publishedAt&language=ru&pageSize=10&apiKey=${apiKey}`);
+                const data = await response.json();
+
+                container.innerHTML = '';
+
+                if (!data.articles || data.articles.length === 0) {
+                    container.innerHTML = '<p>Нет новостей 😢</p>';
+                    return;
+                }
+
+                data.articles.forEach(article => {
+                            const card = document.createElement('div');
+                            card.className = 'news-card';
+                            card.innerHTML = `
+                        ${article.urlToImage ? `<img src="${article.urlToImage}" alt="Изображение">` : ''}
+                        <h3>${article.title}</h3>
+                        <p>${article.description || ''}</p>
+                        <a href="${article.url}" target="_blank">Читать далее</a>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                container.innerHTML = `<p>Ошибка: ${error.message}</p>`;
+            }
+        }
+
+        fetchNews();
+    </script>
+</body>
+
+</html>

@@ -145,7 +145,7 @@ function loadHeader() {
         <a href="/pages/index.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" />Home</a>
         <a href="/pages/about.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" />About Us</a>
         <a href="/pages/contact.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/contacts.png" />Contact</a>
-        <a href="/pages/weather.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/partly-cloudy-day.png" />Weather</a>
+        <a href="/pages/news.html"><img src="https://img.icons8.com/ios-filled/50/ffffff/partly-cloudy-day.png" />Electronik news</a>
       </nav>
     `;
 
